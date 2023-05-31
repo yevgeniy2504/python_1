@@ -1,11 +1,15 @@
-# Дан список повторяющихся элементов. Вернуть список с дублирующимися элементами.
-# В результирующем списке не должно быть дубликатов.
+# Напишите функцию, которая принимает на вход строку - абсолютный путь до файла.
+# Функция возвращает кортеж из трёх элементов: путь, имя файла, расширение файла.
+from typing import Tuple, Any
+
+path_ = "/home/Desktop/python/firs_project/6/2.py"
 
 
-init_list = [1, 1, 2, 3, 4, 4, 5, 5, 5, 6, 6, 7, 8, 9, ]
+def string_plit(text_: str) -> tuple:
+    if "." in text_ and "/" in text_:
+        *path, file_extension = text_.split("/")
+        file, extension = file_extension.split(".")
+        return "/".join(path), file, extension
 
-repeated_list = [elem for elem in init_list if init_list.count(elem) > 1]
-print(list(set(repeated_list)))
 
-
-
+print(string_plit(path_))
