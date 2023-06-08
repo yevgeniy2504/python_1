@@ -1,0 +1,1 @@
+__all__ = ['hw_6', 'path_os_example']
